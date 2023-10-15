@@ -94,4 +94,4 @@ try:
 except KeyboardInterrupt:
     print("\n\n\nchange da world, my final message. goodbye...")
 except NameError:
-    print("\nerror: please, specify your Telegram token and webhook url as global TOKEN and URL variables")
+    print("\nerror: please, specify your Telegram token, webhook url and a X-Telegram-Bot-Api-Secret-Token as global TOKEN, URL and SECRET_WEBHOOK_TOKEN variables")
