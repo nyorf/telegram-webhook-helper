@@ -8,8 +8,10 @@ from datetime import datetime
 
 global TOKEN
 global URL
+global SECRET_WEBHOOK_TOKEN
 #TOKEN = "your telegram token from @BotFather"
 #URL = "your webhook url"
+#SECRET_WEBHOOK_TOKEN = "your secret token for X-Telegram-Bot-Api-Secret-Token"
 
 def menu():
     print("webhook helper. reply with a choice (number)\n\n\
@@ -40,7 +42,10 @@ def setWebhook():
             token = TOKEN
         ),
         headers={"Content-Type": "application/json"},
-        json={"url": URL}
+        json={
+            "url": URL,
+            "secret_token": SECRET_WEBHOOK_TOKEN
+            }
     )
     response = set_webhook.json()
     print("\nsetWebhook request sent. Response status code: {status_code}".format(status_code=set_webhook.status_code))
